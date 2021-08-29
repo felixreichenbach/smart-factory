@@ -5,8 +5,9 @@ Fischertechnik factory Mongodb integration
 
 Start container with custom config file:
 cd into the mqtt folder
+```
 docker run -it -p 1883:1883 -p 9001:9001 -v $(pwd)/mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto
-
+```
 
 ## MQTT Broker (Fischertechnik) Configuration
 

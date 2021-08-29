@@ -1,6 +1,8 @@
 # Smart-Factory
 Fischertechnik factory Mongodb integration
 
+Fischertechnik GitHub repo: <https://github.com/fischertechnik/txt_training_factory>
+
 ## MQTT Client Configuration
 
 Start container with custom config file:
@@ -30,6 +32,8 @@ bridge_attempt_unsubscribe false
 ```
 
 ## Node-RED Dashboard
+
+<https://github.com/fischertechnik/txt_training_factory/tree/master/Node-RED>
 
 ```
 docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red

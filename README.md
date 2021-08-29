@@ -34,4 +34,5 @@ bridge_attempt_unsubscribe false
 ```
 docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
 
+
 Access the dashboard <http://127.0.0.1:1880/>.

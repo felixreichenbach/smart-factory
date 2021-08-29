@@ -1,4 +1,4 @@
-# smart-factory
+# Smart-Factory
 Fischertechnik factory Mongodb integration
 
 ## MQTT Client Configuration

@@ -27,3 +27,6 @@ topic f/# both 1 "" /j1/txt/6875/
 try_private false
 bridge_attempt_unsubscribe false
 ```
+
+## Node-RED Dashboard
+WIP

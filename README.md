@@ -10,7 +10,7 @@ docker run -it -p 1883:1883 -p 9001:9001 -v $(pwd)/mosquitto.conf:/mosquitto/con
 
 ## MQTT Broker (Fischertechnik) Configuration
 
-connection ft-txt-bridge-cloud
+```connection ft-txt-bridge-cloud
 address 192.168.1.113:1883
 #bridge_capath /etc/ssl/certs
 notifications false
@@ -24,4 +24,4 @@ topic o/# both 1 "" /j1/txt/6875/
 topic c/# both 1 "" /j1/txt/6875/
 topic f/# both 1 "" /j1/txt/6875/
 try_private false
-bridge_attempt_unsubscribe false
+bridge_attempt_unsubscribe false```

@@ -3,16 +3,6 @@ Fischertechnik factory Mongodb integration
 
 Fischertechnik GitHub repo: <https://github.com/fischertechnik/txt_training_factory>
 
-
-## MQTT Client Configuration
-
-Start container with custom config file:
-cd into the mqtt folder
-```
-docker run -it -p 1883:1883 -p 9001:9001 -v $(pwd)/mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto
-```
-
-
 ## Fischertechnik Factory Initial Setup
 
 Official Manual:
@@ -25,6 +15,13 @@ Official Manual:
 5. Configure "Wireless" settings to connect to your regular (internet connectivity) WLAN
 6. Add port forwarding for SSH to not have to switch WLAN if you want to access the TXT via SSH
 
+## MQTT Client Configuration
+
+Start container with custom config file:
+cd into the mqtt folder
+```
+docker run -it -p 1883:1883 -p 9001:9001 -v $(pwd)/mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto
+```
 
 ## TXT MQTT Bridge Configuration
 

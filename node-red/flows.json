@@ -21,6 +21,13 @@
         "info": ""
     },
     {
+        "id": "e23170b9e97d67df",
+        "type": "tab",
+        "label": "MongoDB - Out",
+        "disabled": false,
+        "info": ""
+    },
+    {
         "id": "fa600c20.8a9c9",
         "type": "mqtt-broker",
         "name": "",
@@ -363,6 +370,16 @@
         "height": 1
     },
     {
+        "id": "b0a4d094a398c430",
+        "type": "mongodb",
+        "hostname": "myiot-backend.1lu1l.mongodb.net",
+        "topology": "dnscluster",
+        "connectOptions": "retryWrites=true&w=majority",
+        "port": "27017",
+        "db": "smartfactory",
+        "name": "Atlas"
+    },
+    {
         "id": "5cd64e31.be149",
         "type": "mqtt in",
         "z": "d99ca802.0da3f8",
@@ -474,8 +491,10 @@
         "tostatus": false,
         "complete": "payload",
         "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
         "x": 290,
-        "y": 140,
+        "y": 120,
         "wires": []
     },
     {
@@ -607,7 +626,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 310,
-        "y": 180,
+        "y": 160,
         "wires": [
             [
                 "c4562845.01d648",
@@ -771,7 +790,7 @@
         "complete": "payload",
         "targetType": "msg",
         "x": 490,
-        "y": 140,
+        "y": 120,
         "wires": []
     },
     {
@@ -787,7 +806,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "x": 530,
-        "y": 180,
+        "y": 160,
         "wires": []
     },
     {
@@ -3417,5 +3436,168 @@
         "x": 120,
         "y": 400,
         "wires": []
+    },
+    {
+        "id": "8105fa3e7ff7aab4",
+        "type": "mqtt in",
+        "z": "e23170b9e97d67df",
+        "name": "",
+        "topic": "i/bme680",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "fa600c20.8a9c9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "2b981a9fbe4de293"
+            ]
+        ]
+    },
+    {
+        "id": "2b981a9fbe4de293",
+        "type": "function",
+        "z": "e23170b9e97d67df",
+        "name": "bson timestamp",
+        "func": "var date = new Date(msg.payload.ts);\nmsg.payload.ts = date;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 180,
+        "wires": [
+            [
+                "614585e9fcb7ef82",
+                "f5ff53bce7b65387"
+            ]
+        ]
+    },
+    {
+        "id": "8ecce23cf5ca8add",
+        "type": "comment",
+        "z": "e23170b9e97d67df",
+        "name": "Environment Sensor",
+        "info": "",
+        "x": 210,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "614585e9fcb7ef82",
+        "type": "mongodb out",
+        "z": "e23170b9e97d67df",
+        "mongodb": "b0a4d094a398c430",
+        "name": "",
+        "collection": "environment",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 630,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "f5ff53bce7b65387",
+        "type": "debug",
+        "z": "e23170b9e97d67df",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "e05032f0f7772a52",
+        "type": "mqtt in",
+        "z": "e23170b9e97d67df",
+        "name": "",
+        "topic": "i/alert",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "fa600c20.8a9c9",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 170,
+        "y": 280,
+        "wires": [
+            [
+                "07c47d377afed3ce"
+            ]
+        ]
+    },
+    {
+        "id": "b91c911e4df1d1bf",
+        "type": "mongodb out",
+        "z": "e23170b9e97d67df",
+        "mongodb": "b0a4d094a398c430",
+        "name": "",
+        "collection": "alerts",
+        "payonly": true,
+        "upsert": false,
+        "multi": false,
+        "operation": "insert",
+        "x": 610,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "fe1a572a5fc1336c",
+        "type": "debug",
+        "z": "e23170b9e97d67df",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "2f96f2e43b71e4a7",
+        "type": "comment",
+        "z": "e23170b9e97d67df",
+        "name": "Sensor Alert Messages",
+        "info": "",
+        "x": 220,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "07c47d377afed3ce",
+        "type": "function",
+        "z": "e23170b9e97d67df",
+        "name": "bson timestamp",
+        "func": "var date = new Date(msg.payload.ts);\nmsg.payload.ts = date;\n\nvar image = new Buffer(msg.payload.data, 'base64');\nmsg.payload.data = image\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "fe1a572a5fc1336c",
+                "b91c911e4df1d1bf"
+            ]
+        ]
     }
 ]

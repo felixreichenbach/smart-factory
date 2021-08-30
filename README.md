@@ -13,6 +13,8 @@ docker run -it -p 1883:1883 -p 9001:9001 -v $(pwd)/mosquitto.conf:/mosquitto/con
 
 ## MQTT Broker (Fischertechnik) Configuration
 
+<https://github.com/fischertechnik/txt_training_factory/blob/master/TxtSmartFactoryLib/doc/MqttInterface.md>
+
 ```
 connection ft-txt-bridge-cloud
 address 192.168.1.113:1883

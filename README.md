@@ -15,7 +15,7 @@ Official Manual:
 ![WISP Configuration](/doc/images/TP-Link-OperationMode.png)
 5. Configure "Wireless" settings to connect to your regular (internet connectivity) WLAN
 ![WIFI Configuration](/doc/images/TP-Link-WIFISetup.png)
-6. Add port forwarding for SSH to not have to switch WLAN if you want to access the TXT via SSH
+6. Add port forwarding for SSH and the MQTT broker for direct access without switching WLAN
 ![Port Forwarding](/doc/images/TP-Link-PortForward.png)
 
 ## MQTT Client Configuration

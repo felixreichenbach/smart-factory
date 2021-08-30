@@ -12,6 +12,7 @@ Official Manual:
 2. Connect to the TP-Link WIFI and open <http://tplinkwifi.net/>. Password on the TP-Link router.
 3. Login with admin:admin
 4. Switch "Operation Mode" to WISP
+![WISP Configuration](/doc/images/TP-Link-OperationMode.png)
 5. Configure "Wireless" settings to connect to your regular (internet connectivity) WLAN
 6. Add port forwarding for SSH to not have to switch WLAN if you want to access the TXT via SSH
 

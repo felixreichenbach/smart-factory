@@ -18,6 +18,11 @@ Official Manual:
 6. Add port forwarding for SSH and the MQTT broker for direct access without switching WLAN
 ![Port Forwarding](/doc/images/TP-Link-PortForward.png)
 
+
+# MQTT Architecture and Setup
+![Fischertechnik Network Overview](https://github.com/fischertechnik/txt_training_factory/blob/master/doc/Overview_Network.PNG)
+
+
 ## Remote MQTT Broker Configuration
 
 The Fischertechnik factory has MQTT broker deployed on their TXT controllers with one main controller, where we will configure the bridge. This MQTT broker is considered the remote broker which will receive/send messages from/to the main TXT MQTT controller.

@@ -25,7 +25,7 @@ Official Manual:
 
 ## Remote MQTT Broker Configuration
 
-The Fischertechnik factory has MQTT broker deployed on their TXT controllers with one main controller, where we will configure the bridge. This MQTT broker is considered the remote broker which will receive/send messages from/to the main TXT MQTT controller.
+The Fischertechnik factory has MQTT brokera deployed on their TXT controllers as shown on the diagram. By default the factory connects to the Fischercloud. We will run our own MQTT broker and afterwards use the bridge configuration on the main controller to receive/send messages from/to the main TXT MQTT controller.
 
 The broker is started with a custom config file in the mqtt folder. 
 You have to run the command from within the mqtt folder!

@@ -18,10 +18,14 @@ Official Manual:
 6. Add port forwarding for SSH and the MQTT broker for direct access without switching WLAN
 ![Port Forwarding](/doc/images/TP-Link-PortForward.png)
 
-## MQTT Client Configuration
+## Remote MQTT Broker Configuration
 
-Start container with custom config file:
+The Fischertechnik factory has MQTT broker deployed on their TXT controllers with one main controller, where we will configure the bridge. This MQTT broker is considered the remote broker which will receive/send messages from/to the main TXT MQTT controller.
+
+The broker is started with a custom config file in the mqtt folder:
+````
 cd into the mqtt folder
+```
 ```
 docker run -it -p 1883:1883 -p 9001:9001 -v $(pwd)/mosquitto.conf:/mosquitto/config/mosquitto.conf eclipse-mosquitto
 ```

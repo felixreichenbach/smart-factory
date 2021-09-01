@@ -49,12 +49,27 @@ The Mosquitto config file documentation is available here:
 
 ```
 connection ft-txt-bridge-cloud
-address 192.168.1.113:1883
-#bridge_capath /etc/ssl/certs
+address www.fischertechnik-cloud.com:8883
+bridge_capath /etc/ssl/certs
 notifications false
 cleansession false #on connection dropping
-#remote_username 6875
-#remote_password 4!4?P4mTVop6bZ
+remote_username 6875
+remote_password 4!4?P4mTVop6bZ
+local_username txt
+local_password xtx
+topic i/# both 1 "" /j1/txt/6875/
+topic o/# both 1 "" /j1/txt/6875/
+topic c/# both 1 "" /j1/txt/6875/
+topic f/# both 1 "" /j1/txt/6875/
+try_private false
+bridge_attempt_unsubscribe false
+
+connection remote-broker
+address 192.168.1.113:1883
+notifications false
+cleansession false
+#remote_username
+#remote_password
 local_username txt
 local_password xtx
 topic i/# both 1 "" /j1/txt/6875/

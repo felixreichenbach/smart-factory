@@ -58,25 +58,27 @@ remote_password <FISCHERCLOUD MQTT PASSWORD>
 local_username txt
 local_password xtx
 topic i/# both 1 "" /j1/txt/6875/
-topic o/# both 1 "" /j1/txt/6875/
+topic o/# in 1 "" /j1/txt/6875/
 topic c/# both 1 "" /j1/txt/6875/
-topic f/# both 1 "" /j1/txt/6875/
+topic f/i/# out 1 "" /j1/txt/6875/
+topic f/o/# in 1 "" /j1/txt/6875/
 try_private false
 bridge_attempt_unsubscribe false
 
 connection remote-broker
-address <YOUR REMOTE MQTT BROKER IP ADDRESS>
+address <YOUR REMOTE MQTT BROKER IP ADDRESS:PORT>
 notifications false
-cleansession false
+cleansession true
 #remote_username
 #remote_password
 local_username txt
 local_password xtx
-topic i/# both 1 "" /j1/txt/6875/
-topic o/# both 1 "" /j1/txt/6875/
-topic c/# both 1 "" /j1/txt/6875/
-topic f/# both 1 "" /j1/txt/6875/
-try_private false
+topic i/# out 1 "" ""
+topic o/# in 1 "" ""
+topic c/# out 1 "" ""
+topic f/i/# out 1 "" ""
+topic f/o/# in 1 "" ""
+try_private true
 bridge_attempt_unsubscribe false
 ```
 

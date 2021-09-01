@@ -38,9 +38,6 @@ docker run -it -p 1883:1883 -p 9001:9001 -v $(pwd)/mosquitto.conf:/mosquitto/con
 
 The factory contains 6 TXT controllers which communicate within eachother via MQTT. The SSC TXT controller is the main/central controller. The MQTT broker on this controller will be configured to forward/receive messages to the previously configured remote MQTT broker via the following MQTT bridge configuration.
 
-Changing this configuration will disconnect the factory from the Fischercloud!  
-(TODO: Check if both configurations can be run in parallel)
-
 The MQTT interface of the main controller is documented here:  
 <https://github.com/fischertechnik/txt_training_factory/blob/master/TxtSmartFactoryLib/doc/MqttInterface.md>
 

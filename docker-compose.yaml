@@ -20,6 +20,11 @@ services:
       MONGODB_HOST: mongodb
       MONGODB_PORT: 27017
 
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - 3000:3000
+
   node-red:
     image: nodered/node-red
     ports:

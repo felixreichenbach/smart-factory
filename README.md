@@ -94,3 +94,8 @@ Connect to Grafana dashboard:
 
 Connect to MongoDB:
 mongodb://mongodb:27017/data
+
+
+Configure Grafana
+
+![MySQL Configuration](/doc/images/Grafana_MySQL.png)

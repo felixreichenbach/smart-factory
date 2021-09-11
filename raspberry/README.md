@@ -1,6 +1,6 @@
 # Smart-Factory: Raspberry Pi
 
-*Unfortunately mongodb requires a 64bit OS, which is currently not available on the Raspberry Pi!
+**Unfortunately mongodb requires a 64bit OS, which is currently not available on the Raspberry Pi!**
 
 Prepare RaspberryPI:
 

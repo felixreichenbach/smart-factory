@@ -32,6 +32,14 @@ services:
     volumes:
       - node_red_data:/data
 
+  mqtt:
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./mqtt/mosquitto.conf:/mosquitto/config/mosquitto.conf
+
 volumes:
   mdb_data:
   node_red_data:

@@ -2,7 +2,7 @@
 
 **Unfortunately mongodb requires a 64bit OS, which is currently not available on the Raspberry Pi!**
 
-Prepare RaspberryPI:
+##Prepare RaspberryPI:
 
 Install GitHub CLI:
 ```
@@ -12,7 +12,7 @@ sudo apt update
 sudo apt install gh
 ```
 
-Clone Smart-Factory Repo:
+##Clone Smart-Factory Repo:
 
 ```
 gh auth login

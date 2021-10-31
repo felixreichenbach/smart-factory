@@ -2,11 +2,11 @@
     "config": {
         "connector.class"                                     : "io.confluent.connect.mqtt.MqttSourceConnector",
         "tasks.max"                                           : "1",
-        "mqtt.server.uri"                                     : "ssl://< MQTT URI >:8883",
+        "mqtt.server.uri"                                     : "ssl://< HIVEMQ URL >:8883",
         "mqtt.topics"                                         : "factory/#",
         "kafka.topic"                                         : "factory",
         "value.converter"                                     : "org.apache.kafka.connect.converters.ByteArrayConverter",
-        "mqtt.username"                                       : "< MQTT USERNAME >",
+        "mqtt.username"                                       : "< MQTT USER >",
         "mqtt.password"                                       : "< MQTT PASSWORD >",
         "confluent.topic.bootstrap.servers"                   : "redpanda:9092", 
         "confluent.license"                                   : "",

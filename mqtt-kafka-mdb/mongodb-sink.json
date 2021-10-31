@@ -3,7 +3,7 @@
       "connector.class":"com.mongodb.kafka.connect.MongoSinkConnector",
       "tasks.max":1,
       "topics":"factory",
-      "connection.uri":"mongodb+srv://< MongoDB Connection String >",
+      "connection.uri":"mongodb+srv://< MongoDB CONNECTION STRING >",
       "database":"smart-factory",
       "collection":"shop-floor",
       "key.converter":"org.apache.kafka.connect.storage.StringConverter",

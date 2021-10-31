@@ -3,6 +3,14 @@ Run the integration:
 docker-compose up -d --build
 
 
+Configure MongoDB Sink:
+curl --silent -X POST -H "Content-Type: application/json" -d @mongodb-sink.json  http://localhost:8083/connectors
+
+
+Configure MQTT Source:
+curl --silent -X POST -H "Content-Type: application/json" -d @mqtt-source.json  http://localhost:8083/connectors 
+
+
 
 Connector Status:
 curl -s "http://localhost:8083/connectors?expand=info&expand=status"
@@ -19,12 +27,10 @@ Create License Topic:
 rpk topic create -p 1 -r 1 _confluent-command --brokers 127.0.0.1:9093
 
 
-Configure MongoDB Sink:
-curl --silent -X POST -H "Content-Type: application/json" -d @mongodb-sink.json  http://localhost:8083/connectors
 
 
-Configure MQTT Source:
-curl --silent -X POST -H "Content-Type: application/json" -d @mqtt-source.json  http://localhost:8083/connectors 
+
+
 
 
 Delete Connector:

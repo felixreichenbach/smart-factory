@@ -16,6 +16,8 @@ services:
     - PLAINTEXT://0.0.0.0:9092,OUTSIDE://0.0.0.0:9093
     - --advertise-kafka-addr
     - PLAINTEXT://redpanda:9092,OUTSIDE://localhost:9093
+    - --set auto_create_topics_enabled=true 
+    - --set schema_registry:schema_registry_replication_factor=1
     image: docker.vectorized.io/vectorized/redpanda:v21.9.3
     ports:
     - 9093:9093
@@ -34,14 +36,19 @@ services:
       CONNECT_REST_ADVERTISED_HOST_NAME: connect
       CONNECT_REST_PORT: 8083
       CONNECT_GROUP_ID: connect-cluster-group
-      CONNECT_CONFIG_STORAGE_TOPIC: docker-connect-configs
-      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 1
-      CONNECT_OFFSET_FLUSH_INTERVAL_MS: 10000
+      CONNECT_OFFSETS_TOPIC_REPLICATION_FACTOR: -1
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: -1
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: -1
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: -1
       CONNECT_OFFSET_STORAGE_TOPIC: docker-connect-offsets
-      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 1
       CONNECT_STATUS_STORAGE_TOPIC: docker-connect-status
-      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
-      CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
-      CONNECT_AUTO_CREATE_TOPICS_ENABLE: "true"
+      CONNECT_CONFIG_STORAGE_TOPIC: docker-connect-configs
+      # CONNECT_PLUGIN_PATH: "/usr/share/java,/usr/share/confluent-hub-components"
+      # CONNECT_AUTO_CREATE_TOPICS_ENABLE: "true"
+      # CONNECT_OFFSET_FLUSH_INTERVAL_MS: 10000
       CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
       CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
+
+
+      # kakfa replication factor config: https://gist.github.com/nbuesing/4294805ac43c0d1e6800556a37a77697
+      # https://github.com/mongodb-labs/mongodb-redpanda-example/blob/main/run.sh

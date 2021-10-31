@@ -16,14 +16,11 @@ services:
     - PLAINTEXT://0.0.0.0:9092,OUTSIDE://0.0.0.0:9093
     - --advertise-kafka-addr
     - PLAINTEXT://redpanda:9092,OUTSIDE://localhost:9093
-    - --set auto_create_topics_enabled=true 
-    - --set schema_registry:schema_registry_replication_factor=1
     image: docker.vectorized.io/vectorized/redpanda:v21.9.3
     ports:
     - 9093:9093
 
   connect:
-    #image: confluentinc/cp-kafka-connect-base:latest
     build:
       context: .
       dockerfile: Dockerfile-MongoConnect
@@ -48,7 +45,3 @@ services:
       # CONNECT_OFFSET_FLUSH_INTERVAL_MS: 10000
       CONNECT_KEY_CONVERTER: "org.apache.kafka.connect.storage.StringConverter"
       CONNECT_VALUE_CONVERTER: "org.apache.kafka.connect.json.JsonConverter"
-
-
-      # kakfa replication factor config: https://gist.github.com/nbuesing/4294805ac43c0d1e6800556a37a77697
-      # https://github.com/mongodb-labs/mongodb-redpanda-example/blob/main/run.sh

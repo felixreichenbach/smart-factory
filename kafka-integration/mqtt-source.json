@@ -2,15 +2,15 @@
     "config": {
         "connector.class"                                     : "io.confluent.connect.mqtt.MqttSourceConnector",
         "tasks.max"                                           : "1",
-        "mqtt.server.uri"                                     : "ssl://< MQTT URI >",
-        "mqtt.topics"                                         : "factory",
+        "mqtt.server.uri"                                     : "ssl://< MQTT URI >:8883",
+        "mqtt.topics"                                         : "factory/#",
         "kafka.topic"                                         : "factory",
+        "value.converter"                                     : "org.apache.kafka.connect.converters.ByteArrayConverter",
         "mqtt.username"                                       : "< MQTT USERNAME >",
         "mqtt.password"                                       : "< MQTT PASSWORD >",
         "confluent.topic.bootstrap.servers"                   : "redpanda:9092", 
-        "confluent.topic.replication.factor"                  : "1",
         "confluent.license"                                   : "",
+        "topic.creation.enable"                               : true,
         "topic.creation.default.replication.factor"           : -1,
-        "topic.creation.default.partitions"                   : -1,
-        "topic.creation.enable"                               : true
+        "topic.creation.default.partitions"                   : -1
 }}

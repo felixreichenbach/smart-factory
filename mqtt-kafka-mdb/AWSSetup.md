@@ -7,4 +7,4 @@
 4. [Install redpanda](https://vectorized.io/blog/getting-started-rpk/#Installing-Redpanda)
 5. Install git: ```sudo yum install git -y```
 6. Clone Github Repo: ```git clone https://github.com/felixreichenbach/smart-factory.git```
-7. Follow the general guide [Link]|{https://github.com/felixreichenbach/smart-factory/blob/main/mqtt-kafka-mdb/README.md}
+7. Follow the general guide [Link](https://github.com/felixreichenbach/smart-factory/blob/main/mqtt-kafka-mdb/README.md)
